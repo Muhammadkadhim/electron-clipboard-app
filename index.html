@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Clips</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/css/pico-main/pico-main/css/pico.pumpkin.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/css/pico-main/pico-main/css/pico.colors.css"
+    />
+    <link rel="stylesheet" href="./assets/font/font-awsome/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/font/font-awsome/fontawesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <img
+              src="./assets/icons/32x32.png"
+              alt="Clips"
+              style="pointer-events: none"
+            />
+          </li>
+        </ul>
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+          id="draggable"
+        >
+          <i data-feather="minus"></i>
+        </div>
+        <ul>
+          <li>
+            <button id="minimize">
+              <i data-feather="x" class="minimize-icon pico-color-grey-400"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="clear-all-btn">
+        <button id="clearClips">Clear All</button>
+      </div>
+      <main class="clips">
+        <section id="clipsContainer"></section>
+        <section id="noClipsMessage">
+          <span style="font-weight: bold">Nothing here</span>
+          <span style="font-size: 0.8rem"
+            >You'll see your clipboard history here once you've copied
+            something.
+          </span>
+        </section>
+
+        <dialog id="deleteClipsDialog">
+          <article>
+            <h5>Are you sure?</h5>
+            <p>All you clips will be deleted.</p>
+            <footer>
+              <button class="cancel-btn" id="cancelClipsDeletion">
+                <i data-feather="x"></i>
+              </button>
+              <button class="confirm-btn" id="confirmClipsDeletion">
+                <i data-feather="check"></i>
+              </button>
+            </footer>
+          </article>
+        </dialog>
+      </main>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

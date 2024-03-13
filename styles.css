@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/font/Nunito-VariableFont_wght.ttf");
+}
+
+html {
+  -webkit-user-select: none;
+  font-family: "Nunito", sans-serif;
+}
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-inline: 1em;
+  z-index: 9999;
+  background-color: #13171f;
+}
+
+html[data-theme="dark"] nav {
+  background-color: #13171f;
+}
+
+html[data-theme="light"] nav {
+  background-color: white;
+}
+
+main {
+  padding: 1em;
+}
+
+#minimize {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#minimize:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] #minimize:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="light"] #minimize:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#draggable {
+  -webkit-app-region: drag;
+}
+
+#clearClips {
+  font-weight: bold;
+}
+
+.clip-element {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  height: 100px;
+  margin-bottom: 5px !important;
+}
+
+.clip-element .clip-text {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  margin-bottom: 0;
+  height: fit-content;
+  white-space: pre-wrap;
+  border: none !important;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+.clip-element:has(img) {
+  height: fit-content;
+}
+
+.clip-element img {
+  height: 100%;
+  width: 100%;
+}
+
+.clipped-time {
+  font-size: 0.7rem;
+  align-self: flex-end;
+  padding: 0.2em 0.5em;
+}
+
+.clip {
+  border-radius: 0.2em;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.clip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clip .delete-clip-btn {
+  background-color: transparent;
+  width: 24px;
+  height: 15px;
+  border: transparent;
+  padding: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 300ms;
+}
+
+.clip:hover .delete-clip-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.active-clip {
+  outline: 3px solid #fea13a;
+}
+
+.clear-all-btn {
+  display: flex;
+  justify-content: end;
+  padding: 0.5em 1em 0 0;
+}
+
+.clear-all-btn button {
+  padding: 0.3em 0.6em;
+  font-size: small;
+  border-radius: 0.2em;
+}
+
+dialog button {
+  padding: 0.2em 0.4em;
+  transition: transform 300ms;
+}
+
+dialog button:hover {
+  transform: scale(1.1);
+}
+
+dialog .confirm-btn {
+  background-color: #fe4a3a;
+  color: white;
+  border: none;
+  font-size: 0.5rem;
+}
+dialog .cancel-btn {
+  background-color: #3a85fe;
+  color: white;
+  border: none;
+  font-size: 0.5rem;
+}
+
+#noClipsMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
