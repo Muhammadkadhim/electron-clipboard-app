@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "packager": "npx electron-packager . clips-app --overwrite"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
