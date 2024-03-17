@@ -27,6 +27,10 @@ const getCancelClipsDeletionBtn = () => {
   return document.getElementById("cancelClipsDeletion");
 };
 
+const getGoToTopBtn = () => {
+  return document.getElementById("goToTop");
+};
+
 const toggleEmptyClipsMessage = (show) => {
   const noClipsMessage = document.getElementById("noClipsMessage");
   if (show) {
@@ -173,4 +177,5 @@ module.exports = {
   getDeleteClipsDialog,
   getConfirmClipsDeletionBtn,
   getCancelClipsDeletionBtn,
+  getGoToTopBtn,
 };

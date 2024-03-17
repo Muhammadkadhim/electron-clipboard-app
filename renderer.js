@@ -8,6 +8,7 @@ const {
   getDeleteClipsDialog,
   getConfirmClipsDeletionBtn,
   getCancelClipsDeletionBtn,
+  getGoToTopBtn,
 } = require("./utils");
 const crypto = require("crypto");
 
@@ -115,5 +116,9 @@ function applyTheme(theme) {
     document.documentElement.removeAttribute("data-theme");
   }
 }
+
+getGoToTopBtn().addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
 
 setInterval(getLatestClipFromDeviceClipboard, 500);
